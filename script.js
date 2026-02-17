@@ -1,107 +1,71 @@
-:root {
-    --primary: #6c5ce7;
-    --secondary: #a29bfe;
-    --success: #00b894;
-    --danger: #d63031;
-    --bg: #f0f3f7;
-    --text: #2d3436;
+const gameData = {
+    "baca": "https://i.ibb.co/WfqmLPZ/Baca-4f6dce926d7cb25e66a3-1.jpg",
+    "angkat": "https://i.ibb.co/CKyDRtL/Angkat-5a39a6cc3f28b66e33d5-1.jpg",
+    "hantar": "https://i.ibb.co/zSGdVZ1/Hantar-a700122bd4d677f6426f.jpg",
+    "lihat": "https://i.ibb.co/2S0LmmK/Lihat-Tengok-40c6f1eb831eb4fa42c4.jpg",
+    "tengok": "https://i.ibb.co/2S0LmmK/Lihat-Tengok-40c6f1eb831eb4fa42c4.jpg",
+    "kami": "https://i.ibb.co/2BQ4Zyw/Kami-b14a9c807d6417a26758-1.jpg",
+    "saya": "https://i.ibb.co/tTYPQ2YH/Saya-308cf649158d30e78273.jpg",
+    "dapat": "https://i.ibb.co/frJhvCZ/Dapat-bf3f428e2690fc364f3f.jpg",
+    "curi": "https://i.ibb.co/y0s9VxZ/Curi-965466ebcc080427c968.jpg",
+    "gaduh": "https://i.ibb.co/D8jpHzd/Gaduh-94f7a9ac7b4487f0f5d5.jpg"
+    // Tambah senarai selebihnya di sini...
+};
+
+let words = Object.keys(gameData);
+let currentWord = "";
+let lives = 3;
+let stars = 0;
+
+const inputEl = document.getElementById('answer-input');
+const msgEl = document.getElementById('message');
+const imgEl = document.getElementById('sign-image');
+
+function nextQuestion() {
+    if (lives <= 0) return;
+    currentWord = words[Math.floor(Math.random() * words.length)];
+    imgEl.src = gameData[currentWord];
+    inputEl.value = "";
+    msgEl.innerText = "";
+    msgEl.className = "";
+    inputEl.focus();
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
+function checkAnswer() {
+    const userAns = inputEl.value.toLowerCase().trim();
+    if (!userAns) return;
+
+    if (userAns === currentWord) {
+        stars++;
+        document.getElementById('stars').innerText = stars;
+        msgEl.innerText = "BETUL! 🌟";
+        msgEl.className = "correct";
+        setTimeout(nextQuestion, 1200);
+    } else {
+        lives--;
+        document.getElementById('lives').innerText = lives;
+        msgEl.innerText = `SALAH! Jawapan: ${currentWord.toUpperCase()}`;
+        msgEl.className = "wrong";
+        if (lives <= 0) endGame();
+        else setTimeout(nextQuestion, 2000);
+    }
 }
 
-.game-container {
-    background: white;
-    width: 100%;
-    max-width: 450px;
-    padding: 30px;
-    border-radius: 24px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    text-align: center;
-    position: relative;
+// Support key Enter
+inputEl.addEventListener("keypress", (e) => { if(e.key === "Enter") checkAnswer(); });
+
+function endGame() {
+    document.getElementById('overlay').style.display = 'flex';
+    document.getElementById('final-score').innerText = `Skor Akhir: ${stars} Bintang`;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+function resetGame() {
+    lives = 3; stars = 0;
+    document.getElementById('lives').innerText = lives;
+    document.getElementById('stars').innerText = stars;
+    document.getElementById('overlay').style.display = 'none';
+    nextQuestion();
 }
 
-.stat-box {
-    background: #f8f9fa;
-    padding: 10px 15px;
-    border-radius: 12px;
-    font-weight: bold;
-}
-
-.lives { color: var(--danger); }
-.stars { color: #f1c40f; }
-
-.image-card {
-    border: 3px solid var(--secondary);
-    border-radius: 18px;
-    margin-bottom: 20px;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#message {
-    margin-top: 15px;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.correct { background: #e8f8f5; color: var(--success); }
-.wrong { background: #fdf2f2; color: var(--danger); }
-
-#overlay {
-    display: none;
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(108, 92, 231, 0.98);
-    color: white;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    border-radius: 24px;
-}
+// Jalankan soalan pertama
+nextQuestion();
