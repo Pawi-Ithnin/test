@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanda X 1.0 - Pro Edition</title>
+    <title>Tanda X 1.0 - Pro</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
@@ -15,20 +15,19 @@
 </header>
 
 <main>
-    <section id="free-demo-section">
-        <button id="toggleGameBtn" class="btn-main" style="background: #6200ee;">🎮 Main Demo Game Teka</button>
-        <div id="game-container" style="display:none; margin-top:20px;">
-            <div class="stats-bar">
-                <div>Skor: <span id="score-val">0</span></div>
-                <div>❤️❤️❤️</div>
-            </div>
-            <img id="sign-image-game" src="" alt="Soalan Isyarat">
-            <div class="game-input-group" style="display:flex; gap:5px; margin-top:10px;">
-                <input type="text" id="user-input-game" placeholder="Teka perkataan ini...">
-                <button onclick="window.checkAnswer()" class="btn-green">Semak</button>
-            </div>
-            <p id="game-feedback"></p>
+    <section id="game-section">
+        <h2 style="color:#d32f2f;">🎮 Cabaran Isyarat Pantas</h2>
+        <div id="life-container">Nyawa: <span id="lives">❤️❤️❤️</span></div>
+        
+        <div class="game-display">
+            <img id="gameSignImage" src="https://via.placeholder.com/200?text=Sedia..." alt="Soalan">
         </div>
+
+        <div class="game-controls">
+            <input type="text" id="gameInput" placeholder="TAIP JAWAPAN..." autocomplete="off">
+            <button onclick="checkGameAnswer()" class="btn-main" style="width: auto; padding: 10px 20px; margin-top: 10px;">Semak</button>
+        </div>
+        <p id="gameFeedback"></p>
     </section>
 
     <section id="pay-screen">
@@ -36,61 +35,42 @@
             <h2>Log Masuk Pro</h2>
             <input type="text" id="userInput" class="login-input" placeholder="Username">
             <input type="password" id="passInput" class="login-input" placeholder="Password">
-            <button onclick="window.prosesLogin()" class="btn-main" style="background: #d32f2f;">Masuk</button>
-            <p>Tiada akaun? <a href="#" onclick="window.showRegister()">Daftar Sini</a></p>
+            <button onclick="prosesLogin()" class="btn-main">Masuk Sekarang</button>
+            <p style="font-size:13px;">Belum ada akaun? <a href="#" onclick="showRegister()">Daftar Di Sini</a></p>
         </div>
 
         <div id="register-box" style="display:none;">
             <h2>Daftar Pakej</h2>
-            <input type="text" id="regUser" class="login-input" placeholder="Username Baru">
-            <input type="password" id="regPass" class="login-input" placeholder="Password Baru">
-            <select id="regPackage" class="login-input">
-                <option value="Harian (RM3)">Pakej Harian - RM3</option>
-                <option value="Bulanan (RM25)">Pakej Bulanan - RM25</option>
-            </select>
-            <button onclick="window.prosesDaftar()" class="btn-main" style="background: #d32f2f;">Hantar Pendaftaran</button>
-            <p><a href="#" onclick="window.showLogin()">Kembali ke Login</a></p>
+            <div class="price-container">
+                <div class="price-card harian">
+                    <h4>HARIAN</h4>
+                    <p>RM 3</p>
+                </div>
+                <div class="price-card bulanan">
+                    <div class="tag-jimat">JIMAT!</div>
+                    <h4>BULANAN</h4>
+                    <p>RM 25</p>
+                </div>
+            </div>
+            <input type="text" id="regUser" class="login-input" placeholder="Username Pilihan">
+            <input type="password" id="regPass" class="login-input" placeholder="Password Pilihan">
+            <button onclick="prosesDaftar()" class="btn-main btn-reg">Hantar Pendaftaran</button>
+            <p style="font-size:13px;"><a href="#" onclick="showLogin()">Kembali ke Log Masuk</a></p>
         </div>
-    </section>
-
-    <section id="adminDashboard" style="display:none;">
-        <div style="display:flex; justify-content:space-between; align-items:center;">
-            <h2>📊 Admin Dashboard</h2>
-            <button onclick="window.logKeluarAdmin()" class="btn-dark">🚪 Keluar Admin</button>
-        </div>
-        <table class="user-table">
-            <thead>
-                <tr><th>User</th><th>Status</th><th>Aksi</th></tr>
-            </thead>
-            <tbody id="userTableBody"></tbody>
-        </table>
     </section>
 
     <section id="mainAppSection" style="display:none;">
-        <div class="control-panel" style="display:flex; gap:5px; justify-content:center; flex-wrap:wrap;">
+        <div class="control-panel">
             <button id="btnYT" class="btn-blue">📺 Mod YouTube</button>
             <button id="btnStart" class="btn-green">🎤 Mula Suara</button>
-            <button id="btnStop" class="btn-red">⏹ Henti</button>
-            <button onclick="window.logKeluar()" class="btn-dark">🚪 Keluar</button>
+            <button onclick="logKeluar()" class="btn-dark">🚪 Keluar</button>
         </div>
-        <div id="status" style="text-align:center; font-weight:bold; margin:10px; color:blue;">Sedia...</div>
-        
-        <div id="youtubeSection" style="display:none;">
-            <div style="display:flex; gap:5px; margin-bottom:10px;">
-                <input type="text" id="youtubeUrl" placeholder="Paste link YouTube..." style="flex:1; padding:8px;">
-                <button id="btnLoad" class="btn-blue">Muat</button>
-            </div>
-            <div id="player"></div>
-        </div>
-
-        <div id="signLanguageSection" style="text-align:center;">
-            <p id="output" style="font-weight:bold;">Visual Isyarat:</p>
-            <img id="signImage" src="https://via.placeholder.com/300?text=Sedia..." style="width:100%; border-radius:10px;">
+        <div id="signLanguageSection">
+            <img id="signImage" src="https://via.placeholder.com/300?text=Arahkan+Suara" alt="Visual Isyarat">
         </div>
     </section>
 </main>
 
-<script src="https://www.youtube.com/iframe_api"></script>
 <script src="script.js"></script>
 </body>
 </html>
