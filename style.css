@@ -1,77 +1,14 @@
-/* =========================================
-   GAYA ASAL & TEMA MERAH-PRO
-   ========================================= */
-body { 
-    font-family: 'Segoe UI', sans-serif; 
-    margin: 0; padding: 0; 
-    background: #fdfdfd; color: #333;
-    overflow-x: hidden;
-}
-
-header { 
-    padding: 15px; background: #fff; 
-    border-bottom: 3px solid #d32f2f; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-    text-align: center;
-}
-
-section {
-    background: white; margin: 20px auto; 
-    max-width: 600px; border-radius: 15px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    padding: 20px; text-align: center;
-}
-
-/* Game Styling */
-#game-section {
-    border: 2px solid #d32f2f;
-}
-.game-display img {
-    width: 180px; height: 180px;
-    border-radius: 10px; border: 1px solid #ddd;
-    margin-bottom: 15px;
-}
-#gameInput {
-    padding: 12px; width: 80%; border-radius: 8px;
-    border: 2px solid #d32f2f; text-align: center;
-    font-weight: bold; font-size: 1.1rem;
-}
-
-/* Input & Buttons */
-.login-input {
-    padding: 12px; width: 85%; border-radius: 8px; 
-    border: 1px solid #ddd; margin-bottom: 10px;
-}
-
-.btn-main { 
-    padding: 14px; background: #d32f2f; color: white; 
-    border: none; border-radius: 8px; cursor: pointer; 
-    width: 90%; font-weight: bold; transition: 0.3s;
-}
-.btn-main:hover { background: #b71c1c; }
-
-.btn-reg { background: #2ecc71; }
-.btn-dark { background: #333; color: white; padding: 10px; border-radius: 8px; border:none; cursor:pointer;}
-
-/* Kad Harga */
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #fdfdfd; text-align: center; }
+header { padding: 15px; background: #fff; border-bottom: 3px solid #d32f2f; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+section { background: white; margin: 20px auto; max-width: 600px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 20px; }
+.login-input { padding: 12px; width: 85%; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 10px; }
+.btn-main { padding: 14px; background: #d32f2f; color: white; border: none; border-radius: 8px; cursor: pointer; width: 90%; font-weight: bold; }
 .price-container { display: flex; gap: 10px; margin-bottom: 20px; }
-.price-card { 
-    flex: 1; padding: 15px; border-radius: 10px; 
-    text-align: center; border: 1px solid #ddd;
-}
-.bulanan { position: relative; background: #e8f5e9; border-color: #2e7d32; }
-.tag-jimat { 
-    position: absolute; top: -10px; right: -5px; 
-    background: red; color: white; font-size: 10px; 
-    padding: 2px 8px; border-radius: 5px; font-weight: bold; 
-}
-
-/* Efek CNY */
-.cny-icon {
-    position: fixed; top: -50px; z-index: 1; 
-    pointer-events: none; animation: fall linear forwards;
-}
-@keyframes fall {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(110vh) rotate(360deg); opacity: 0.3; }
-}
+.price-card { flex: 1; padding: 15px; border-radius: 10px; border: 1px solid #ddd; position: relative; }
+.tag-jimat { position: absolute; top: -10px; right: -5px; background: red; color: white; font-size: 10px; padding: 2px 8px; border-radius: 5px; }
+.user-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 12px; }
+.user-table th, .user-table td { border-bottom: 1px solid #eee; padding: 10px; text-align: left; }
+.game-display img { width: 180px; height: 180px; border-radius: 10px; margin-bottom: 15px; }
+#gameInput { padding: 12px; width: 70%; border-radius: 8px; border: 2px solid #d32f2f; text-align: center; text-transform: uppercase; }
+.cny-icon { position: fixed; top: -50px; z-index: 1; pointer-events: none; animation: fall linear forwards; }
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
