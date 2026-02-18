@@ -1,4 +1,4 @@
-/* --- TEMA MODERN RAMADHAN (NEUMORPHIC) --- */
+/* --- TEMA MODERN RAMADHAN CEH TEKA --- */
 :root {
     --primary-emerald: #022C22;
     --emerald-light: #064E3B;
@@ -33,7 +33,6 @@ body {
     overflow: hidden;
 }
 
-/* Pola Hiasan Islamik */
 body::before {
     content: "";
     position: absolute;
@@ -104,22 +103,28 @@ body::before {
 .lives { color: var(--danger); }
 .stars { color: #ffa502; }
 
-/* --- TAJUK --- */
+/* --- TAJUK BARU --- */
 .title-area h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    background: linear-gradient(135deg, var(--emerald-light), var(--primary-emerald));
+    color: var(--primary-emerald);
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.title-area h1 .highlight {
+    background: linear-gradient(135deg, var(--gold), #B8860B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0;
 }
 
 .ramadhan-tag {
-    color: var(--gold);
+    color: var(--emerald-light);
     font-weight: 700;
     font-size: 0.75rem;
     letter-spacing: 3px;
     margin-bottom: 20px;
+    opacity: 0.8;
 }
 
 /* --- KAD GAMBAR --- */
@@ -182,7 +187,6 @@ button#submit-btn:hover {
     filter: brightness(1.1);
 }
 
-/* --- MESEJ --- */
 #message {
     margin-top: 20px;
     font-size: 1rem;
@@ -225,9 +229,7 @@ button#submit-btn:hover {
     cursor: pointer;
 }
 
-/* Responsif Mobile */
 @media (max-width: 480px) {
     .btn-exit-game .text { display: none; }
     .btn-exit-game { padding: 12px; border-radius: 50%; top: 15px; left: 15px; }
-    .game-container { padding: 30px 20px; }
 }
