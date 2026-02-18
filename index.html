@@ -3,37 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jari Pintar - Teka Bahasa Isyarat</title>
+    <title>Jari Pintar - Ramadhan Edition 🌙</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <a href="#" onclick="window.close(); return false;" class="btn-exit-game">
-        <span class="icon">🏠</span> 
-        <span class="text">KELUAR KE LOG IN</span>
+        <span class="icon">🌙</span> 
+        <span class="text">KELUAR KE UTAMA</span>
     </a>
 
     <div class="game-container">
+        
         <div id="overlay">
-            <h2>GAME OVER</h2>
-            <p id="final-score">Anda mengumpul 0 bintang!</p>
-            <button class="restart-btn" onclick="resetGame()">Main Semula</button>
+            <div class="overlay-content">
+                <h2>TAMAT 🕌</h2>
+                <p id="final-score">Anda mengumpul 0 bintang!</p>
+                <button class="restart-btn" onclick="resetGame()">Main Semula</button>
+            </div>
         </div>
 
         <div class="header">
-            <div class="stat-box lives">❤️ <span id="lives">3</span></div>
-            <div class="stat-box stars">⭐ <span id="stars">0</span></div>
+            <div class="stat-box lives">
+                <span class="emoji">❤️</span> <span id="lives">3</span>
+            </div>
+            <div class="stat-box stars">
+                <span class="emoji">⭐</span> <span id="stars">0</span>
+            </div>
         </div>
 
-        <h1>Teka Bahasa Isyarat</h1>
+        <div class="title-area">
+            <h1>Jari Pintar</h1>
+            <p class="ramadhan-tag">EDISI RAMADHAN</p>
+        </div>
 
         <div class="image-card">
             <img id="sign-image" src="" alt="Sila tunggu...">
+            <div class="card-glow"></div>
         </div>
 
-        <input type="text" id="answer-input" placeholder="Apa maksud isyarat ini?" autocomplete="off">
-        <button id="submit-btn" onclick="checkAnswer()">SEMAK JAWAPAN</button>
+        <div class="action-area">
+            <input type="text" id="answer-input" placeholder="Apa maksud isyarat ini?" autocomplete="off">
+            <button id="submit-btn" onclick="checkAnswer()">SEMAK JAWAPAN</button>
+        </div>
 
         <div id="message"></div>
     </div>
