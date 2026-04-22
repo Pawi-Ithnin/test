@@ -9,7 +9,7 @@ const gameData = {
     "saya": "https://i.ibb.co/tTYPQ2YH/Saya-308cf649158d30e78273.jpg",
     "dapat": "https://i.ibb.co/frJhvCZ/Dapat-bf3f428e2690fc364f3f.jpg",
     "curi": "https://i.ibb.co/y0s9VxZ/Curi-965466ebcc080427c968.jpg",
-    "gaduh": "https://i.ibb.co/D8jpHzd/Gaduh-94f7a9ac7b4487f0f5d5.jpg"
+    "gaduh": "https://i.ibb.co/D8jpHzd/Gaduh-94f7a9ac7b4487f0f5d5.jpg",
     "masam": "https://i.ibb.co/3yvggh1F/Masam-29ea15c3839c43ee765e-2.jpg",
     "manis": "https://i.ibb.co/LDP9BZXh/Manis-f4084527a2578320cec8-1.jpg", 
     "tunjuk": "https://i.ibb.co/nNdwXX8p/Tunjuk-0190c8e30053e0878aef.jpg", 
