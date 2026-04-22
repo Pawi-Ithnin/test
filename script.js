@@ -10,9 +10,9 @@ const gameData = {
     "curi": "https://i.ibb.co/y0s9VxZ/Curi-965466ebcc080427c968.jpg",
     "gaduh": "https://i.ibb.co/D8jpHzd/Gaduh-94f7a9ac7b4487f0f5d5.jpg"
     "masam": "https://i.ibb.co/3yvggh1F/Masam-29ea15c3839c43ee765e-2.jpg",
-"manis": "https://i.ibb.co/LDP9BZXh/Manis-f4084527a2578320cec8-1.jpg" , 
-"tunjuk": "https://i.ibb.co/nNdwXX8p/Tunjuk-0190c8e30053e0878aef.jpg" , 
-"tuduh": "https://i.ibb.co/s9d2C8xD/Tuduh-3154156b682ce1008f5e.jpg" ,
+    "manis": "https://i.ibb.co/LDP9BZXh/Manis-f4084527a2578320cec8-1.jpg" , 
+     "tunjuk": "https://i.ibb.co/nNdwXX8p/Tunjuk-0190c8e30053e0878aef.jpg" , 
+     "tuduh": "https://i.ibb.co/s9d2C8xD/Tuduh-3154156b682ce1008f5e.jpg",
     // Tambah senarai selebihnya di sini...
 };
 
