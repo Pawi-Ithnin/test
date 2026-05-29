@@ -14,6 +14,16 @@ const gameData = {
     "manis": "https://i.ibb.co/LDP9BZXh/Manis-f4084527a2578320cec8-1.jpg", 
     "tunjuk": "https://i.ibb.co/nNdwXX8p/Tunjuk-0190c8e30053e0878aef.jpg", 
     "tuduh": "https://i.ibb.co/s9d2C8xD/Tuduh-3154156b682ce1008f5e.jpg",
+     "berat": "https://i.ibb.co/rwrD00q/Berat-167d033fd4464d4d1f7c.jpg",
+  "beza": "https://i.ibb.co/ZhtqK4K/Beza-31ab13b0132f19bf0d5d-1.jpg",
+  "bukti": "https://i.ibb.co/Ch5y3D5/Bukti-Membuktikan-45841d5839580627a4e3-1.jpg",
+  "cemerlang": "https://i.ibb.co/5YNgXRs/Cemerlang-ecfb99e902b211bb605a-1.jpg",
+  "ceka"p:"https://i.ibb.co/sqynY9M/Cekap-af8604172e39a87303a3.jpg", 
+  "cukup":"https://i.ibb.co/ZMS2Fzr/Cukup-1544d4da1d5a71170ac4-1.jpg",
+  "digital":"https://i.ibb.co/syZkWdT/Digital-8de94d31fde61690c99f-1.jpg", 
+  "gemuk":"https://i.ibb.co/cL53bbN/Gemuk-bd671109050e019e0d3f-1.jpg", 
+  "istimewa":"https://i.ibb.co/K0jzt8Y/Istimewa-21fd6011b69f29ad987a-1.jpg",
+  "jahil":"https://i.ibb.co/sPqNNvS/Jahil-5c5a82f0f7ab158cd5e3.jpg",
     // Tambah senarai selebihnya di sini...
 };
 
