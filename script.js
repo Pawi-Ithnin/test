@@ -81,10 +81,10 @@ function checkAnswer() {
         msgEl.innerText = "BETUL! 🌟";
         msgEl.className = "correct";
 
-        // Redeem apabila cukup 20 point
-        if (points >= 20) {
+        // Redeem apabila cukup 5 point
+        if (points >= 5) {
             setTimeout(() => {
-                alert("🎁 Tahniah! Anda telah mengumpul 20 point dan boleh redeem hadiah!");
+                alert("🎁 Tahniah! Anda telah mengumpul 5 point dan boleh redeem hadiah!");
             }, 300);
         }
 
