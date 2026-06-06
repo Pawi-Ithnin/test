@@ -17,7 +17,6 @@ const gameData = {
     "beza": "https://i.ibb.co/ZhtqK4K/Beza-31ab13b0132f19bf0d5d-1.jpg",
     "bukti": "https://i.ibb.co/Ch5y3D5/Bukti-Membuktikan-45841d5839580627a4e3-1.jpg",
     "cemerlang": "https://i.ibb.co/5YNgXRs/Cemerlang-ecfb99e902b211bb605a-1.jpg",
-    "cekap": "https://i.ibb.co/sqynY9M/Cekap-af8604172e39a87303a3.jpg",
     "cukup": "https://i.ibb.co/ZMS2Fzr/Cukup-1544d4da1d5a71170ac4-1.jpg",
     "digital": "https://i.ibb.co/syZkWdT/Digital-8de94d31fde61690c99f-1.jpg",
     "gemuk": "https://i.ibb.co/cL53bbN/Gemuk-bd671109050e019e0d3f-1.jpg",
