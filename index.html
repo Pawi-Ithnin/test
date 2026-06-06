@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceh Teka - </title>
+    <title>Ceh Teka</title>
+
     <link rel="stylesheet" href="style.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <a href="#" onclick="window.close(); return false;" class="btn-exit-game">
-        <span class="icon">🌙</span> 
+        <span class="icon">🌙</span>
         <span class="text">KELUAR KE UTAMA</span>
     </a>
 
     <div class="game-container">
-        
+
+        <!-- Paparan Tamat Permainan -->
         <div id="overlay">
             <div class="overlay-content">
                 <h2>ALAMAK! 🕌</h2>
@@ -24,33 +27,68 @@
             </div>
         </div>
 
+        <!-- Statistik -->
         <div class="header">
+
             <div class="stat-box lives">
-                <span class="emoji">❤️</span> <span id="lives">3</span>
+                <span class="emoji">❤️</span>
+                <span id="lives">3</span>
             </div>
+
             <div class="stat-box stars">
-                <span class="emoji">⭐</span> <span id="stars">0</span>
+                <span class="emoji">⭐</span>
+                <span id="stars">0</span>
             </div>
+
+            <div class="stat-box points">
+                <span class="emoji">🎁</span>
+                <span id="points">0</span>
+            </div>
+
         </div>
 
+        <!-- Tajuk -->
         <div class="title-area">
             <h1>CEH <span class="highlight">TEKA</span></h1>
             <p class="ramadhan-tag">EDISI RAMADHAN KAREEM</p>
         </div>
 
+        <!-- Gambar Isyarat -->
         <div class="image-card">
             <img id="sign-image" src="" alt="Sila tunggu...">
             <div class="card-glow"></div>
         </div>
 
+        <!-- Input Jawapan -->
         <div class="action-area">
-            <input type="text" id="answer-input" placeholder="Apa maksud isyarat ini?" autocomplete="off">
-            <button id="submit-btn" onclick="checkAnswer()">SEMAK JAWAPAN</button>
+            <input
+                type="text"
+                id="answer-input"
+                placeholder="Apa maksud isyarat ini?"
+                autocomplete="off"
+            >
+
+            <button
+                id="submit-btn"
+                onclick="checkAnswer()"
+            >
+                SEMAK JAWAPAN
+            </button>
         </div>
 
+        <!-- Mesej Betul / Salah -->
         <div id="message"></div>
+
+        <!-- Redeem Hadiah -->
+        <div class="redeem-area">
+            <button id="redeem-btn" onclick="redeemReward()">
+                🎁 REDEEM HADIAH (20 POINT)
+            </button>
+        </div>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
